@@ -17,13 +17,11 @@ addtask.addEventListener("click", () => {
     removeList.append(removeButton);
 });
 
-// Event delegation to handle clicks on the .remove-buttons container
+
 removeList.addEventListener("click", (event) => {
     if (event.target.classList.contains("remove-task")) {
-        // Find the index of the clicked Remove Task button
         let index = Array.from(removeList.children).indexOf(event.target);
 
-        // Remove the corresponding task and button
         taskList.removeChild(taskList.children[index]);
         removeList.removeChild(event.target);
     }
